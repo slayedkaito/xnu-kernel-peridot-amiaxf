@@ -14,8 +14,8 @@ set -e
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 B=$ROOT/xnu-deps/build/m2v
 SDK=${THEOS:-$HOME/theos}/sdks/iPhoneOS16.5.sdk
-M2V_PIN=624bab3918de5b978e1101517abca2b4fa426565            # steelbrain/metal2vulkan, branch development
-AM_PIN=243d63cf43305a85c8119b66b49cb7df4b30b019             # UniXNU/AdrenoMetal
+M2V_PIN=963f0e64f103d2e682cd0cc454a8fe50f52c8cbb            # steelbrain/metal2vulkan, branch development
+AM_PIN=ed8386e6b2966bc5535921d15bf5eeeb63f8ad46             # UniXNU/AdrenoMetal
 export PATH=$HOME/.cargo/bin:$PATH
 command -v cargo >/dev/null || { echo "mk-m2v.sh: no cargo (rustup, Rust 1.98, target aarch64-apple-ios)" >&2; exit 1; }
 LLVM_AS=$(command -v llvm-as-21 || command -v llvm-as) || { echo "mk-m2v.sh: no llvm-as (apt: llvm-21)" >&2; exit 1; }

@@ -75,6 +75,10 @@ struct hakios_battery_state {
 void hakios_battery_report(const struct hakios_battery_state *state);
 void hakios_net_init(void);            /* en0, if there is something to carry its frames: sys/hakios.net.h */
 void hakios_cpufreq_init(void);        /* boot-arg cpufreq=1: the phone's processor at full speed */
+int hakios_cpufreq_top(uint32_t domain);                 /* a group's highest row, -1 if not raised */
+uint32_t hakios_cpufreq_khz(uint32_t domain, int row);   /* how fast that row is, 0 if there is none */
+void hakios_cpufreq_cap(uint32_t domain, int row);       /* run the group at that row (the thermal service) */
+void hakios_thermal_init(void);        /* the thermal service: on with cpufreq=1 unless thermal=0 (drivers/power/hakios.thermal.c) */
 void hakios_adreno_init(void);         /* boot-arg adreno=N: the first N steps of waking the phone's GPU */
 void hakios_adreno_quiesce(void);      /* on the way back to the loader: the GPU block stopped, out of our memory */
 void hakios_adreno_stop(void);         /* before that, where the ending is no panic's: the GPU given back in order */

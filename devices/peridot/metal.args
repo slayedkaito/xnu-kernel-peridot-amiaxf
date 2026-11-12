@@ -1,0 +1,2 @@
+# Boot-arguments for Metal runs on POCO F6 / Redmi Turbo 3 (peridot, SM8635).
+bootcpu=7 cpus=8 cpufreq=1 fb_hz=120 fb_threads=6 touch_poll_us=4000

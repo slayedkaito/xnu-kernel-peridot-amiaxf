@@ -1,0 +1,4 @@
+# HakiOS defconfig for the POCO F6 / Redmi Turbo 3 (peridot): common kernel + SM8635 + device.
+#include common_defconfig
+#include sm8635.config
+#include peridot.config

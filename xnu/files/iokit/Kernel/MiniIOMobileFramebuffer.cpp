@@ -276,6 +276,9 @@ panelInterface(void)
 	char version[128] = "";
 	uint64_t physical = gIntfPhysical;
 
+	if (physical == 0) {
+		PE_parse_boot_argn("board_intf", &physical, sizeof(physical));
+	}
 	if (physical == 0 && PE_parse_boot_argn("hakios_kver", version, sizeof(version)) && strnstr(version, "-sc7280-", sizeof(version)) != NULL) {
 		physical = DPU_SC7280_INTF1;
 	}
